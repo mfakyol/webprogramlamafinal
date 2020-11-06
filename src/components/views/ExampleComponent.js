@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getExample } from "../redux/reducers/exampleReducer";
+import { getExample } from "../../redux/reducers/exampleReducer";
 
 class ExampleComponent extends Component {
   componentDidMount() {
