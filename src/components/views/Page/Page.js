@@ -49,6 +49,11 @@ export default class Page extends Component {
       products
     })
   }
+  addKupon(){
+    this.setState({
+      kupon:1
+    })
+  }
 
   render() {
     return (
@@ -140,20 +145,20 @@ export default class Page extends Component {
                 </div>
               ) : null;
             })}
+            {this.state.kupon > 0 ? (<div className={classes["row"]}> <span>Kupon</span> <span>{this.state.kupon}</span></div>): null}
             <div className={classes["toplam"]}>
               <span>Toplam Fiyat </span>{" "}
               <span>
                 {this.state.products[0].adet * this.state.products[0].price +
                   this.state.products[1].adet * this.state.products[1].price +
                   this.state.products[2].adet *
-                    this.state.products[2].price}{" "}
-                ₺
+                    this.state.products[2].price - this.state.kupon} ₺
               </span>
             </div>
           </div>
           <div className={classes["kupon"]}>
             <input name="input" className={classes["input"]} type="text" />{" "}
-            <button className={classes["add-kupon"]}>Kupon gir</button>
+            <button onClick={this.addKupon.bind(this)} className={classes["add-kupon"]}>Kupon gir</button>
           </div>
           <button onClick={this.removeCart.bind(this)}> Sepeti sil</button>
         </div>
