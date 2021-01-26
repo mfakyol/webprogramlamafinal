@@ -5,9 +5,9 @@ import logo from "../../../helpers/bm.png";
 export default class Page extends Component {
   state = {
     products: [
-      { name: "Somun Ekmek", adet: 1, price: 2 },
-      { name: "Çikolata", adet: 2, price: 5 },
-      { name: "Domates", adet: 3, price: 6 },
+      { name: "Somun Ekmek", adet: 0, price: 2 },
+      { name: "Çikolata", adet:0, price: 5 },
+      { name: "Domates", adet: 0, price: 6 },
     ],
     kupon: 0,
     input: "",
