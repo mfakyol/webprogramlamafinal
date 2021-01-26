@@ -40,6 +40,16 @@ export default class Page extends Component {
     });
   }
 
+  removeCart() {
+    let products = this.state.products;
+    products[0].adet = 0;
+    products[1].adet = 0;
+    products[2].adet = 0;
+    this.setState({
+      products
+    })
+  }
+
   render() {
     return (
       <div>
@@ -145,6 +155,7 @@ export default class Page extends Component {
             <input name="input" className={classes["input"]} type="text" />{" "}
             <button className={classes["add-kupon"]}>Kupon gir</button>
           </div>
+          <button onClick={this.removeCart.bind(this)}> Sepeti sil</button>
         </div>
       </div>
     );
